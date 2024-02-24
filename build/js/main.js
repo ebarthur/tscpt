@@ -164,7 +164,52 @@ const numberOrString = (input) => {
 };
 numberOrString("hello");
 numberOrString(42);
+// convert to more or less specific type
+let a = "hello";
+let b = a; // less specific type
+let c = a; // more specific type
+let d = a; // more specific type
+let e = "world";
+const addOrConcat = (a, b, c) => {
+    if (c === "add") {
+        return a + b;
+    }
+    return a.toString() + b.toString();
+};
+let myVal = addOrConcat(8, 6, "concat");
+let nextVal = addOrConcat(8, 6, "add");
+console.log(addOrConcat(4, 5, "concat")); // 45
+console.log(addOrConcat(4, 5, "add")); // 9
+// The DOM
+const img = document.getElementById("#img"); // non-null assertion operator
+const myinput = document.getElementById("input");
+const myimg = document.getElementById("img"); // this will not work in tsx files or react
 /*
-@ Type Assertion/ Type Casting
+ Classes
  24-02-2024
  */
+class Coder {
+    constructor(name, age, lang = [], isEmployed) {
+        this.name = name;
+        this.age = age;
+        this.lang = lang;
+        this.isEmployed = isEmployed;
+    }
+    greet() {
+        return `Hello, my name is ${this.name} and I am ${this.isEmployed ? 'employed' : 'unemployed'}`;
+    }
+    getAge() {
+        return `Age: ${this.age}`;
+    }
+}
+const person = new Coder('Cramuel', 20, ['Golang', 'C++'], false);
+console.log(person.greet());
+console.log(person.getAge());
+class WebDev extends Coder {
+    constructor(name, age, lang, isEmployed) {
+        super(name, age, lang, isEmployed);
+    }
+    greet() {
+        return `Hello, my name is ${this.name} and I am a web developer`;
+    }
+}
