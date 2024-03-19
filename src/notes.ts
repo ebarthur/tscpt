@@ -29,9 +29,9 @@ let temperature = 6; //! inference
 
 //* Type Casting
 /*
-// let frontEndMastersFounding = new Date("Jan 1, 2012")
-// let date1 = frontEndMastersFounding
-// let date2 = frontEndMastersFounding as any;
+// let data = new Date("Jan 1, 2012")
+// let date1 = data
+// let date2 = data as any;
 
 /*
 // const humid3 = 79 as number; //✔️ is 79 a number? If so, this is safe!
